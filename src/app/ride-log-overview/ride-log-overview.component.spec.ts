@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RideSelectComponent } from './ride-select.component';
+import { RideLogOverviewComponent } from './ride-log-overview.component';
 
-describe('RideSelectComponent', () => {
-  let component: RideSelectComponent;
-  let fixture: ComponentFixture<RideSelectComponent>;
+describe('RideLogOverviewComponent', () => {
+  let component: RideLogOverviewComponent;
+  let fixture: ComponentFixture<RideLogOverviewComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RideSelectComponent ]
+      declarations: [ RideLogOverviewComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RideSelectComponent);
+    fixture = TestBed.createComponent(RideLogOverviewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

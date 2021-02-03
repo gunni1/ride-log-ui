@@ -1,0 +1,10 @@
+table {
+  width: 100%;
+}
+
+.button-flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 1em;
+}
