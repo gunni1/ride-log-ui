@@ -1,19 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-
-
-
-/**
- * Static Data for Testing
- */
-export interface Vehicle {
-  name: string;
-  vehicleClass: string;
-}
+import {Vehicle} from "../../model/vehicle";
+import {EditRideComponent} from "../edit-ride/edit-ride.component";
+import {MatDialog} from "@angular/material/dialog";
 
 const VEHICLE_DATA: Vehicle[] = [
-  {name: 'Saxonia', vehicleClass: '8+'},
-  {name: 'St. Cathrin', vehicleClass: '4-'},
-  {name: 'Gelber Drache', vehicleClass: '2-'}
+  {id:"1",name: 'Saxonia', vehicleClass: '8+',coxed: true, seats: 8},
+  {id: "2", name: 'St. Cathrin', vehicleClass: '4-', coxed: false, seats: 4},
+  {id: "3", name: 'Gelber Drache', vehicleClass: '2-', coxed: false, seats: 2}
 ];
 
 @Component({
@@ -23,7 +16,7 @@ const VEHICLE_DATA: Vehicle[] = [
 })
 export class VehicleSelectComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   vehicleDataSource = VEHICLE_DATA;
   displayedColumns: string[] = ['name', 'vehicleClass'];
@@ -31,4 +24,9 @@ export class VehicleSelectComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  openBeginRideDialog(selected: Vehicle) {
+    this.dialog.open(EditRideComponent, {
+      data: { vehicle: selected}
+    })
+  }
 }

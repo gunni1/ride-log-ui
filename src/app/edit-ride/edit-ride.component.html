@@ -1,1 +1,19 @@
-<p>edit-ride works!</p>
+<mat-card>
+  <mat-card-title>
+    <mat-label>{{vehicle.name}}</mat-label>
+  </mat-card-title>
+  <mat-card-content>
+    <mat-label class="mat-step-label">Mannschaft</mat-label>
+    <form class="crew-form">
+      <mat-form-field>
+        <mat-label>Steuer</mat-label>
+        <input type="text" matInput [formControl]="crewFormControl" [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+          <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+            {{option.name}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+</mat-card>

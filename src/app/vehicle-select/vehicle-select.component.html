@@ -13,7 +13,7 @@
     <table mat-table [dataSource]="vehicleDataSource" >
 
       <ng-container matColumnDef="name">
-        <td mat-cell *matCellDef="let vehicle " [routerLink]="['/vehicle', vehicle.id]"> {{vehicle.name}} </td>
+        <td mat-cell *matCellDef="let vehicle" (click)="openBeginRideDialog(vehicle)"> {{vehicle.name}} </td>
       </ng-container>
       <ng-container matColumnDef="vehicleClass">
         <td mat-cell *matCellDef="let vehicle "> {{vehicle.vehicleClass}} </td>
