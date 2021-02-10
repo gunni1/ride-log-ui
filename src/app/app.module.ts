@@ -18,6 +18,7 @@ import {MatDialogModule} from "@angular/material/dialog";
 import {MatAutocompleteModule} from "@angular/material/autocomplete";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
+import { AutocompMembersComponent } from './autocomp-input/autocomp-members.component';
 
 
 const routes: Routes = [
@@ -31,7 +32,8 @@ const routes: Routes = [
     AppComponent,
     EditRideComponent,
     VehicleSelectComponent,
-    RideLogOverviewComponent
+    RideLogOverviewComponent,
+    AutocompMembersComponent
   ],
   imports: [
     BrowserModule,

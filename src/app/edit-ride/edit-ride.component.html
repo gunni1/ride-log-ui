@@ -4,16 +4,15 @@
   </mat-card-title>
   <mat-card-content>
     <mat-label class="mat-step-label">Mannschaft</mat-label>
-    <form class="crew-form">
-      <mat-form-field>
-        <mat-label>Steuer</mat-label>
-        <input type="text" matInput [formControl]="crewFormControl" [matAutocomplete]="auto">
-        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
-          <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-            {{option.name}}
-          </mat-option>
-        </mat-autocomplete>
-      </mat-form-field>
+    <form [formGroup]="crewFormGroup" class="crew-form">
+
+      <app-autocomp-member
+        [clubMembers]="clubMembers" [title]="'Steuer'" [control]="crewFormControl"></app-autocomp-member>
+      <mat-label>Besatzung</mat-label>
+      <app-autocomp-member
+        [clubMembers]="clubMembers" [title]="'#1'" [control]="crew1"></app-autocomp-member>
+      <app-autocomp-member
+        [clubMembers]="clubMembers" [title]="'#2'" [control]="crew2"></app-autocomp-member>
     </form>
   </mat-card-content>
 </mat-card>
